@@ -1,0 +1,14 @@
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/bin/Debug/net9.0/Calculadora.App
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/bin/Debug/net9.0/Calculadora.App.deps.json
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/bin/Debug/net9.0/Calculadora.App.runtimeconfig.json
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/bin/Debug/net9.0/Calculadora.App.dll
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/bin/Debug/net9.0/Calculadora.App.pdb
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/obj/Debug/net9.0/Calculadora.App.GeneratedMSBuildEditorConfig.editorconfig
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/obj/Debug/net9.0/Calculadora.App.AssemblyInfoInputs.cache
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/obj/Debug/net9.0/Calculadora.App.AssemblyInfo.cs
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/obj/Debug/net9.0/Calculadora.App.csproj.CoreCompileInputs.cache
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/obj/Debug/net9.0/Calculadora.App.dll
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/obj/Debug/net9.0/refint/Calculadora.App.dll
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/obj/Debug/net9.0/Calculadora.App.pdb
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/obj/Debug/net9.0/Calculadora.App.genruntimeconfig.cache
+/home/citeli/Duranium/Exercicios/Calculadora/Calculadora.App/obj/Debug/net9.0/ref/Calculadora.App.dll
