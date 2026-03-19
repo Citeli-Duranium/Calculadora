@@ -1,0 +1,17 @@
+# Build
+bin/
+obj/
+
+# VS/Rider
+.vs/
+.idea/
+*.user
+
+# dotnet
+*.suo
+*.userprefs
+project.lock.json
+
+# OS
+.DS_Store
+Thumbs.db
