@@ -3,7 +3,7 @@
 using System.Numerics;
 using Calculadora.Core;
 
-public class UnitTestCalculadora
+public class UnitTestSoma
 {
     [Fact]
     public void soma_simples()
