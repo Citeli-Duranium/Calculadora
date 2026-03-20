@@ -9,7 +9,7 @@ public class UnitTestCalculadora
     public void soma_simples()
     {
         Calculadora c = new Calculadora();
-        double a = c.soma(1,2);
+        int a = c.soma(1,2);
 
         Assert.Equal(3.0, a);
     }
@@ -18,7 +18,7 @@ public class UnitTestCalculadora
     public void soma_numero_negativo()
     {
         Calculadora c = new Calculadora();
-        double a = c.soma(-1,2);
+        int a = c.soma(-1,2);
 
         Assert.Equal(1.0, a);
     }
@@ -27,10 +27,28 @@ public class UnitTestCalculadora
     public void soma_numero_float()
     {
         Calculadora c = new Calculadora();
-        double a = c.soma(1.02,2.002);
+        float var1 = 1.2f;
+        float var2 = 2.2f;
+        float a = c.soma(var1, var2);
 
-        Assert.Equal(3.022, a);
+        float tolerancia = 0.000001f;
+
+        Assert.True( Math.Abs(a-3.4f) < tolerancia );
     }
+
+        [Fact]
+    public void soma_numero_double()
+    {
+        Calculadora c = new Calculadora();
+        double var1 = 1.02;
+        double var2 = 2.002;
+        double result = c.soma(var1, var2);
+
+        double tolerancia = 0.00000001;
+
+        Assert.True( Math.Abs(result-3.022) < tolerancia );
+    }
+
 
     [Fact]
     public void soma_numero_char()
