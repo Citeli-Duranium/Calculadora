@@ -11,7 +11,7 @@ public class UnitTestSub
         Calculadora c = new Calculadora();
         int a = c.sub(1,2);
 
-        Assert.Equal(1, a);
+        Assert.Equal(-1, a);
     }
 
     [Fact]
@@ -20,7 +20,7 @@ public class UnitTestSub
         Calculadora c = new Calculadora();
         int a = c.sub(-1,2);
 
-        Assert.Equal(1.0, a);
+        Assert.Equal(-3, a);
     }
 
     [Fact]
@@ -28,12 +28,12 @@ public class UnitTestSub
     {
         Calculadora c = new Calculadora();
         float var1 = 1.2f;
-        float var2 = 2.2f;
-        float a = c.sub(var1, var2);
+        float var2 = 2.3f;
+        float result = c.sub(var1, var2);
 
         float tolerancia = 0.000001f;
-
-        Assert.True( Math.Abs(a-3.4f) < tolerancia );
+        float expected = -1.1f;
+        Assert.InRange( result, expected-tolerancia, expected+tolerancia );
     }
 
         [Fact]
@@ -45,8 +45,8 @@ public class UnitTestSub
         double result = c.sub(var1, var2);
 
         double tolerancia = 0.00000001;
-
-        Assert.True( Math.Abs(result-3.022) < tolerancia );
+        double expected = -0.982;
+        Assert.InRange( result, expected-tolerancia, expected+tolerancia );
     }
 
 
