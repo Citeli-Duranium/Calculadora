@@ -51,7 +51,7 @@ public class UnitTestSub
 
 
     [Fact]
-    public void sub_numero_char()
+    public void sub_char()
     {
         Calculadora c = new Calculadora();
 
@@ -59,6 +59,18 @@ public class UnitTestSub
             double a = c.sub('a', 'a');
         });
 
+    }
+
+    [Fact]
+    public void sub_int_float_to_double()
+    {
+        Calculadora c = new Calculadora();
+
+        double result = c.sub(1, 2.2f);
+
+        double tolerancia = 0.000001;
+        double expected = -1.2;
+        Assert.InRange( result, expected-tolerancia, expected+tolerancia );
     }
 
 }
