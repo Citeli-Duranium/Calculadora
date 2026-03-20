@@ -34,17 +34,26 @@ public class Calculadora
 
     private bool is_valid_parameter<T>(T param) where T: INumber<T>
     {
-        if (typeof(T) == typeof(char))
+        Type[] permited_types = { 
+            typeof(int), 
+            typeof(float), 
+            typeof(double),
+            typeof(short),
+            typeof(uint),
+            typeof(long),
+            typeof(ulong), 
+            typeof(decimal)
+        };
+
+        Type param_type = typeof(T);
+
+        foreach (Type type in permited_types)
         {
-            return false;
+            if(type == param_type)
+                return true;
         }
 
-        if (typeof(T) == typeof(string))
-        {
-            return false;
-        }
-
-        return true;
+        return false;
     }
 
 
