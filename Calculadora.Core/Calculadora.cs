@@ -18,6 +18,11 @@ public class Calculadora
 
     public T sub<T>(T a, T b) where T: INumber<T>
     {
+        if (!(this.is_valid_parameter(a) || this.is_valid_parameter(b)))
+        {
+            throw new ArgumentException("Argumento não é numérico");
+        }
+        
         return a - b;
     }
 
