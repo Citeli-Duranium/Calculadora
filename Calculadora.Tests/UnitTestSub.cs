@@ -1,76 +1,65 @@
 ﻿namespace Calculadora.Tests;
 
-using System.Numerics;
 using Calculadora.Core;
 
 public class UnitTestSub
 {
-    [Fact]
-    public void sub_simples()
+    [Theory]
+    [InlineData(1, 2, -1)]
+    [InlineData(-1, 2, -3)]
+    public void sub_quando_recebe_inteiros_deve_retornar_resultado_correto(int a, int b, int esperado)
     {
-        Calculadora c = new Calculadora();
-        int a = c.sub(1,2);
+        var c = new Calculadora();
 
-        Assert.Equal(-1, a);
+        var result = c.sub(a, b);
+
+        Assert.Equal(esperado, result);
     }
 
-    [Fact]
-    public void sub_numero_negativo()
+    [Theory]
+    [InlineData(1.2f, 2.3f, -1.1f)]
+    public void sub_quando_recebe_float_deve_retornar_valor_com_precisao(float a, float b, float esperado)
     {
-        Calculadora c = new Calculadora();
-        int a = c.sub(-1,2);
+        var c = new Calculadora();
 
-        Assert.Equal(-3, a);
-    }
-
-    [Fact]
-    public void sub_numero_float()
-    {
-        Calculadora c = new Calculadora();
-        float var1 = 1.2f;
-        float var2 = 2.3f;
-        float result = c.sub(var1, var2);
+        var result = c.sub(a, b);
 
         float tolerancia = 0.000001f;
-        float expected = -1.1f;
-        Assert.InRange( result, expected-tolerancia, expected+tolerancia );
+        Assert.InRange(result, esperado - tolerancia, esperado + tolerancia);
     }
 
-        [Fact]
-    public void sub_numero_double()
+    [Theory]
+    [InlineData(1.02, 2.002, -0.982)]
+    public void sub_quando_recebe_double_deve_retornar_valor_com_precisao(double a, double b, double esperado)
     {
-        Calculadora c = new Calculadora();
-        double var1 = 1.02;
-        double var2 = 2.002;
-        double result = c.sub(var1, var2);
+        var c = new Calculadora();
+
+        var result = c.sub(a, b);
 
         double tolerancia = 0.00000001;
-        double expected = -0.982;
-        Assert.InRange( result, expected-tolerancia, expected+tolerancia );
+        Assert.InRange(result, esperado - tolerancia, esperado + tolerancia);
     }
 
-
     [Fact]
-    public void sub_char()
+    public void sub_quando_recebe_tipo_invalido_deve_lancar_exception()
     {
-        Calculadora c = new Calculadora();
+        var c = new Calculadora();
 
-        Assert.Throws<ArgumentException>(() => {
-            double a = c.sub('a', 'a');
+        Assert.Throws<ArgumentException>(() =>
+        {
+            c.sub('a', 'a');
         });
-
     }
 
-    [Fact]
-    public void sub_int_float_to_double()
+    [Theory]
+    [InlineData(1, 2.2f, -1.2)]
+    public void sub_quando_recebe_tipos_mistos_deve_retornar_double_com_precisao(int a, float b, double esperado)
     {
-        Calculadora c = new Calculadora();
+        var c = new Calculadora();
 
-        double result = c.sub(1, 2.2f);
+        double result = c.sub(a, b);
 
         double tolerancia = 0.000001;
-        double expected = -1.2;
-        Assert.InRange( result, expected-tolerancia, expected+tolerancia );
+        Assert.InRange(result, esperado - tolerancia, esperado + tolerancia);
     }
-
 }
