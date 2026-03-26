@@ -43,7 +43,11 @@ public class Calculadora
         {
             throw new ArgumentException("Argumento não é numérico");
         }
-        
+
+        if ( T.IsZero(b) ) {
+            throw new DivideByZeroException();
+        }
+
         return a / b;
     }
 
